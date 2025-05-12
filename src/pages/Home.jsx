@@ -27,7 +27,7 @@ const Home = () => {
   ];
   
   const handleTabClick = (tabId) => {
-    if (tabId !== 'timeTracker') {
+    if (tabId !== 'timeTracker' && tabId !== 'documents') {
       toast.info(`The ${tabId} feature will be available in the next update!`, {
         position: "bottom-center",
         autoClose: 3000,
