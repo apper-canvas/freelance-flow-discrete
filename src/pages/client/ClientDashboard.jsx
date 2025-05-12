@@ -91,7 +91,6 @@ const ClientDashboard = () => {
                     <p className="text-sm flex items-center">
                       <GlobeIcon className="w-3.5 h-3.5 mr-1.5" /> {client.website}
                     </p>
-                  )}
                   
                   {client.address && (
                     <p className="text-sm flex items-center"><MapPinIcon className="w-3.5 h-3.5 mr-1.5 flex-shrink-0" /> {`${client.address.city}, ${client.address.state}, ${client.address.country}`}</p>
