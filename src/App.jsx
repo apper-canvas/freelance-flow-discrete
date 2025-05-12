@@ -6,6 +6,11 @@ import getIcon from './utils/iconUtils';
 import Home from './pages/Home';
 import DocumentsPage from './pages/DocumentsPage';
 import NotFound from './pages/NotFound';
+import ClientLogin from './pages/client/ClientLogin';
+import ClientDashboard from './pages/client/ClientDashboard';
+import ClientProjectDetails from './pages/client/ClientProjectDetails';
+import ProtectedClientRoute from './components/ProtectedClientRoute';
+import { Link } from 'react-router-dom';
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
@@ -64,7 +69,14 @@ function App() {
               </svg>
             </motion.div>
             <h1 className="text-xl font-bold text-primary dark:text-primary-light">FreelanceFlow</h1>
-          </div>
+           </div>
+           
+          <div className="hidden md:flex md:items-center md:space-x-4">
+            {/* Client Portal Link */}
+            <Link to="/client/login" className="text-sm font-medium text-surface-600 hover:text-primary dark:text-surface-300 dark:hover:text-primary-light transition-colors">
+              Client Portal
+            </Link>
+           </div>
           
           <button 
             onClick={toggleDarkMode}
@@ -84,6 +96,11 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/documents" element={<DocumentsPage />} />
+            {/* Client Portal Routes */}
+            <Route path="/client/login" element={<ClientLogin />} />
+            <Route path="/client/dashboard" element={<ProtectedClientRoute><ClientDashboard /></ProtectedClientRoute>} />
+            <Route path="/client/projects/:projectId" element={<ProtectedClientRoute><ClientProjectDetails /></ProtectedClientRoute>} />
+            
             <Route path="*" element={<NotFound />} />
           </Routes>
         </AnimatePresence>
