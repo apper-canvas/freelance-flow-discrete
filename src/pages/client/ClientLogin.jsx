@@ -86,7 +86,7 @@ const ClientLogin = () => {
               </button>
               
               <p className="text-sm text-center text-surface-600 dark:text-surface-400 mt-4">
-                Hint: Use "client@example.com" with password "password123"
+                Hint: Use "client@example.com" or "client2@example.com" with password "password123"
               </p>
             </form>
           </div>

@@ -45,6 +45,9 @@ const ClientDashboard = () => {
   const ClockIcon = getIcon('Clock');
   const AlertCircleIcon = getIcon('AlertCircle');
   const ArrowRightIcon = getIcon('ArrowRight');
+  const PhoneIcon = getIcon('Phone');
+  const GlobeIcon = getIcon('Globe');
+  const MapPinIcon = getIcon('MapPin');
   
   // Filter projects based on status
   const filteredProjects = sampleProjects.filter(project => {
@@ -65,7 +68,25 @@ const ClientDashboard = () => {
             <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-6">
               <div>
                 <h1 className="text-2xl font-bold text-surface-900 dark:text-white">Welcome, {client.name}</h1>
-                <p className="text-surface-600 dark:text-surface-400 mt-1">{client.company}</p>
+                <div className="text-surface-600 dark:text-surface-400 mt-1 flex flex-col gap-1">
+                  <p className="font-medium">{client.company}</p>
+                  
+                  {client.phone && (
+                    <p className="text-sm flex items-center">
+                      <PhoneIcon className="w-3.5 h-3.5 mr-1.5" /> {client.phone}
+                    </p>
+                  )}
+                  
+                  {client.website && (
+                    <p className="text-sm flex items-center">
+                      <GlobeIcon className="w-3.5 h-3.5 mr-1.5" /> {client.website}
+                    </p>
+                  )}
+                  
+                  {client.address && (
+                    <p className="text-sm flex items-center"><MapPinIcon className="w-3.5 h-3.5 mr-1.5 flex-shrink-0" /> {`${client.address.city}, ${client.address.state}, ${client.address.country}`}</p>
+                  )}
+                </div>
               </div>
               
               <div className="mt-4 md:mt-0">

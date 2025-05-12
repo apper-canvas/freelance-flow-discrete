@@ -1,25 +1,8 @@
 import { createContext, useState, useContext, useEffect } from 'react';
+import { clients } from '../data/ClientsData';
 
 // Create context for client authentication
 const ClientAuthContext = createContext(null);
-
-// Sample client data for demonstration
-const sampleClients = [
-  {
-    id: 'c1',
-    email: 'client@example.com',
-    password: 'password123', // In a real app, never store plaintext passwords
-    name: 'Demo Client',
-    company: 'ABC Corporation'
-  },
-  {
-    id: 'c2',
-    email: 'client2@example.com',
-    password: 'password123',
-    name: 'Test Client',
-    company: 'XYZ Industries'
-  }
-];
 
 export const ClientAuthProvider = ({ children }) => {
   const [client, setClient] = useState(null);
@@ -37,7 +20,7 @@ export const ClientAuthProvider = ({ children }) => {
   // Log in a client
   const login = (email, password) => {
     // Find the client with matching email and password
-    const foundClient = sampleClients.find(
+    const foundClient = clients.find(
       c => c.email === email && c.password === password
     );
 
