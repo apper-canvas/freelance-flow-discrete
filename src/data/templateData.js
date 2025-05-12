@@ -36,12 +36,12 @@ export const proposalTemplates = [
       {
         id: 'investment',
         title: 'Investment',
-        content: `# Investment\n\nThe total investment for this project is ${TOTAL_AMOUNT}.\n\nPayment Schedule:\n- 50% deposit to secure the project start date\n- 25% at project midpoint\n- 25% upon project completion\n\nAll payments are due within 14 days of invoice date.`
+        content: `# Investment\n\nThe total investment for this project is {TOTAL_AMOUNT}.\n\nPayment Schedule:\n- 50% deposit to secure the project start date\n- 25% at project midpoint\n- 25% upon project completion\n\nAll payments are due within 14 days of invoice date.`
       },
       {
         id: 'terms',
         title: 'Terms & Conditions',
-        content: `# Terms & Conditions\n\n1. This proposal is valid for 30 days from the date of submission.\n2. Any changes to the project scope may affect the timeline and cost.\n3. {CLIENT_NAME} will provide all necessary content and feedback in a timely manner.\n4. Additional revisions beyond those specified will be billed at my hourly rate of ${HOURLY_RATE}.`
+        content: `# Terms & Conditions\n\n1. This proposal is valid for 30 days from the date of submission.\n2. Any changes to the project scope may affect the timeline and cost.\n3. {CLIENT_NAME} will provide all necessary content and feedback in a timely manner.\n4. Additional revisions beyond those specified will be billed at my hourly rate of {HOURLY_RATE}.`
       }
     ]
   },
@@ -79,7 +79,7 @@ export const proposalTemplates = [
       {
         id: 'pricing',
         title: 'Pricing',
-        content: `# Pricing\n\nThe total investment for this project is ${TOTAL_AMOUNT}.\n\nThis includes:\n- All design and development work\n- 2 rounds of revisions at each stage\n- CMS training (2 hours)\n- 30 days of post-launch support\n\nPayment Schedule:\n- 40% deposit\n- 30% after design approval\n- 30% upon project completion`
+        content: `# Pricing\n\nThe total investment for this project is {TOTAL_AMOUNT}.\n\nThis includes:\n- All design and development work\n- 2 rounds of revisions at each stage\n- CMS training (2 hours)\n- 30 days of post-launch support\n\nPayment Schedule:\n- 40% deposit\n- 30% after design approval\n- 30% upon project completion`
       }
     ]
   }
@@ -105,7 +105,7 @@ export const contractTemplates = [
       {
         id: 'compensation',
         title: 'Compensation',
-        content: `# Compensation\n\nClient agrees to compensate Service Provider as follows:\n\n- Rate: ${RATE} {RATE_TYPE: per hour/fixed fee}\n- Estimated Total: ${TOTAL_AMOUNT}\n- Payment Schedule: {PAYMENT_SCHEDULE}\n- Payment Method: {PAYMENT_METHOD}\n\nAll invoices are due within {PAYMENT_TERMS} days of receipt.`
+        content: `# Compensation\n\nClient agrees to compensate Service Provider as follows:\n\n- Rate: {RATE} {RATE_TYPE: per hour/fixed fee}\n- Estimated Total: {TOTAL_AMOUNT}\n- Payment Schedule: {PAYMENT_SCHEDULE}\n- Payment Method: {PAYMENT_METHOD}\n\nAll invoices are due within {PAYMENT_TERMS} days of receipt.`
       },
       {
         id: 'timeline',
