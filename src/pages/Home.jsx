@@ -134,7 +134,10 @@ const Home = () => {
               {activeTab !== 'timeTracker' && (
                 <div className="flex flex-col items-center justify-center py-12 text-center">
                   <div className="w-20 h-20 mb-6 rounded-full bg-primary/10 flex items-center justify-center">
-                    {tabs.find(tab => tab.id === activeTab)?.icon({ className: "w-8 h-8 text-primary" })}
+                    {(() => {
+                      const Icon = tabs.find(tab => tab.id === activeTab)?.icon;
+                      return Icon ? <Icon className="w-8 h-8 text-primary" /> : null;
+                    })()}
                   </div>
                   <h3 className="text-xl font-semibold mb-3">
                     {tabs.find(tab => tab.id === activeTab)?.label} Feature
