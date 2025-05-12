@@ -1,11 +1,14 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import getIcon from '../utils/iconUtils';
 import MainFeature from '../components/MainFeature';
 
 const Home = () => {
   const [activeTab, setActiveTab] = useState('timeTracker');
+  
+  const navigate = useNavigate();
   
   // Define all icons used in the component
   const ClockIcon = getIcon('Clock');
@@ -27,12 +30,21 @@ const Home = () => {
   ];
   
   const handleTabClick = (tabId) => {
-    if (tabId !== 'timeTracker' && tabId !== 'documents') {
+    if (tabId === 'documents') {
+      navigate('/documents');
+      return;
+    }
+    
+    if (tabId === 'reports') {
+      navigate('/reports');
+      return;
+    }
+    
+    if (tabId !== 'timeTracker') {
       toast.info(`The ${tabId} feature will be available in the next update!`, {
         position: "bottom-center",
         autoClose: 3000,
       });
-      return;
     }
     setActiveTab(tabId);
   };

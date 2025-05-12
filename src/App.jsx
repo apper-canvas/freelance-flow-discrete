@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import getIcon from './utils/iconUtils';
 import Home from './pages/Home';
 import DocumentsPage from './pages/DocumentsPage';
+import ReportsPage from './pages/ReportsPage';
 import NotFound from './pages/NotFound';
 import ClientLogin from './pages/client/ClientLogin';
 import ClientDashboard from './pages/client/ClientDashboard';
@@ -96,6 +97,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/documents" element={<DocumentsPage />} />
+            <Route path="/reports" element={<ReportsPage />} />
             {/* Client Portal Routes */}
             <Route path="/client/login" element={<ClientLogin />} />
             <Route path="/client/dashboard" element={<ProtectedClientRoute><ClientDashboard /></ProtectedClientRoute>} />
