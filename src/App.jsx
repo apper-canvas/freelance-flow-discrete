@@ -9,6 +9,7 @@ import ReportsPage from './pages/ReportsPage';
 import NotFound from './pages/NotFound';
 import ClientLogin from './pages/client/ClientLogin';
 import ClientDashboard from './pages/client/ClientDashboard';
+import ClientDetailsPage from './pages/client/ClientDetailsPage';
 import ClientProjectDetails from './pages/client/ClientProjectDetails';
 import ProtectedClientRoute from './components/ProtectedClientRoute';
 import { Link } from 'react-router-dom';
@@ -101,6 +102,7 @@ function App() {
             {/* Client Portal Routes */}
             <Route path="/client/login" element={<ClientLogin />} />
             <Route path="/client/dashboard" element={<ProtectedClientRoute><ClientDashboard /></ProtectedClientRoute>} />
+            <Route path="/client/details/:clientId" element={<ProtectedClientRoute><ClientDetailsPage /></ProtectedClientRoute>} />
             <Route path="/client/projects/:projectId" element={<ProtectedClientRoute><ClientProjectDetails /></ProtectedClientRoute>} />
             
             <Route path="*" element={<NotFound />} />

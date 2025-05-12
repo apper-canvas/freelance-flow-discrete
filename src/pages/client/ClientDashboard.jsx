@@ -48,6 +48,7 @@ const ClientDashboard = () => {
   const PhoneIcon = getIcon('Phone');
   const GlobeIcon = getIcon('Globe');
   const MapPinIcon = getIcon('MapPin');
+  const InfoIcon = getIcon('Info');
   
   // Filter projects based on status
   const filteredProjects = sampleProjects.filter(project => {
@@ -76,6 +77,15 @@ const ClientDashboard = () => {
                       <PhoneIcon className="w-3.5 h-3.5 mr-1.5" /> {client.phone}
                     </p>
                   )}
+                    <Link 
+                      to={`/client/details/${client.id}`} 
+                      className="text-sm font-medium text-primary dark:text-primary-light flex items-center hover:underline mt-1"
+                    >
+                      <InfoIcon className="w-4 h-4 mr-1" /> View Client Details
+                    </Link>
+                  )}
+                  
+                  {client.phone && (
                   
                   {client.website && (
                     <p className="text-sm flex items-center">
