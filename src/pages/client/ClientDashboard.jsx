@@ -77,24 +77,23 @@ const ClientDashboard = () => {
                       <PhoneIcon className="w-3.5 h-3.5 mr-1.5" /> {client.phone}
                     </p>
                   )}
-                    <Link 
-                      to={`/client/details/${client.id}`} 
-                      className="text-sm font-medium text-primary dark:text-primary-light flex items-center hover:underline mt-1"
-                    >
-                      <InfoIcon className="w-4 h-4 mr-1" /> View Client Details
-                    </Link>
-                  )}
-                  
-                  {client.phone && (
                   
                   {client.website && (
                     <p className="text-sm flex items-center">
                       <GlobeIcon className="w-3.5 h-3.5 mr-1.5" /> {client.website}
                     </p>
+                  )}
                   
                   {client.address && (
                     <p className="text-sm flex items-center"><MapPinIcon className="w-3.5 h-3.5 mr-1.5 flex-shrink-0" /> {`${client.address.city}, ${client.address.state}, ${client.address.country}`}</p>
                   )}
+                  
+                  <Link 
+                    to={`/client/details/${client.id}`} 
+                    className="text-sm font-medium text-primary dark:text-primary-light flex items-center hover:underline mt-1"
+                  >
+                    <InfoIcon className="w-4 h-4 mr-1" /> View Client Details
+                  </Link>
                 </div>
               </div>
               
