@@ -568,7 +568,13 @@ const MainFeature = () => {
             className="fixed inset-0 z-50 overflow-y-auto"
           >
             <div className="flex items-center justify-center min-h-screen px-4 pt-4 pb-20 text-center sm:block sm:p-0">
-              <div className="fixed inset-0 transition-opacity" aria-hidden="true">
+              <div 
+                className="fixed inset-0 transition-opacity" 
+                aria-hidden="true"
+                onClick={(e) => {
+                  if (e.target === e.currentTarget) setShowModal(false);
+                }}
+              >
                 <div className="absolute inset-0 bg-surface-900 opacity-75"></div>
               </div>
               
@@ -579,9 +585,8 @@ const MainFeature = () => {
                 animate={{ scale: 1, opacity: 1 }}
                 exit={{ scale: 0.9, opacity: 0 }}
                 className="inline-block align-bottom bg-white dark:bg-surface-800 rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full"
-                onClick={(e) => e.stopPropagation()}
               >
-                <div className="bg-white dark:bg-surface-800 px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+                <div className="bg-white dark:bg-surface-800 px-4 pt-5 pb-4 sm:p-6 sm:pb-4" onClick={(e) => e.stopPropagation()}>
                   <div className="sm:flex sm:items-start">
                     <div className="mx-auto flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-secondary/20 sm:mx-0 sm:h-10 sm:w-10">
                       <ClockIcon className="h-6 w-6 text-secondary" />
