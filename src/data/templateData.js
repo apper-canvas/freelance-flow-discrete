@@ -1,6 +1,25 @@
 /**
  * Template data for proposals and contracts
  */
+
+// Define template variables to prevent reference errors
+const CLIENT_NAME = '{CLIENT_NAME}';
+const PROJECT_DESCRIPTION = '{PROJECT_DESCRIPTION}';
+const FORMATS = '{FORMATS}';
+const DURATION = '{DURATION}';
+const TOTAL_AMOUNT = '{TOTAL_AMOUNT}';
+const HOURLY_RATE = '{HOURLY_RATE}';
+const PAGE_COUNT = '{PAGE_COUNT}';
+const INTEGRATIONS = '{INTEGRATIONS}';
+const TECHNOLOGIES = '{TECHNOLOGIES}';
+const YOUR_NAME = '{YOUR_NAME}';
+const YOUR_ADDRESS = '{YOUR_ADDRESS}';
+const CLIENT_ADDRESS = '{CLIENT_ADDRESS}';
+const DATE = '{DATE}';
+const DETAILED_SERVICES_DESCRIPTION = '{DETAILED_SERVICES_DESCRIPTION}';
+const RATE = '{RATE}';
+const RATE_TYPE = '{RATE_TYPE: per hour/fixed fee}';
+const PAYMENT_SCHEDULE = '{PAYMENT_SCHEDULE}';
 export const proposalTemplates = [
   {
     id: 'p1',
