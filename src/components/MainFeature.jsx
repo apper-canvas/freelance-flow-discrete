@@ -177,8 +177,18 @@ const MainFeature = () => {
     const { hours, minutes, date, description, project, client, billable } = manualEntry;
     
     if (!project || !client || !description || (!hours && !minutes)) {
-      toast.error('Please fill in all required fields', {
+      toast.error('Please fill in all required fields (project, client, description, and duration)', {
         position: "top-center",
+      });
+      return;
+    }
+    
+    // Validate date 
+    const selectedDate = new Date(date);
+    const currentDate = new Date();
+    if (selectedDate > currentDate) {
+      toast.error('Cannot log time for future dates', {
+        position: "top-center"
       });
       return;
     }
