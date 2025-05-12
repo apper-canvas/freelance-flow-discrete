@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { toast } from 'react-toastify';
-import { format, addSeconds } from 'date-fns';
+import { format } from 'date-fns';
 import getIcon from '../utils/iconUtils';
 
 const MainFeature = () => {
@@ -114,11 +114,18 @@ const MainFeature = () => {
   };
   
   // Event handlers
-  const handleStartTimer = () => {
+  const validateTimerInputs = () => {
     if (!currentProject || !currentClient || !currentActivity) {
       toast.error('Please fill in all required fields', {
         position: "top-center",
       });
+      return false;
+    }
+    return true;
+  };
+  
+  const handleStartTimer = () => {
+    if (!validateTimerInputs()) {
       return;
     }
     
@@ -176,7 +183,7 @@ const MainFeature = () => {
   const handleManualEntrySave = () => {
     const { hours, minutes, date, description, project, client, billable } = manualEntry;
     
-    if (!project || !client || !description || (!hours && !minutes)) {
+    if (!project || !client || !description || ((!hours || hours === '0') && (!minutes || minutes === '0'))) {
       toast.error('Please fill in all required fields (project, client, description, and duration)', {
         position: "top-center",
       });
@@ -196,7 +203,7 @@ const MainFeature = () => {
     const hoursNum = parseInt(hours || '0');
     const minutesNum = parseInt(minutes || '0');
     const totalSeconds = (hoursNum * 3600) + (minutesNum * 60);
-    
+
     if (totalSeconds < 60) {
       toast.warning('Time entry too short (< 1 minute)', {
         position: "top-center",
